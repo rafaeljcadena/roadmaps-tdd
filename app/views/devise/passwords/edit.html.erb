@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Set a new password</h2>
+    <ul class="actions">
+      <li>
+          <a href="" title="<%= t('Refresh') %>">
+              <i class="zmdi zmdi-refresh-alt"></i>
+          </a>
+      </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+    <%= semantic_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :reset_password_token, as: :hidden %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation %>
+      <% end %>
+
+      <%= f.actions do %>
+        <%= f.action :submit, label: "Change my password", :as => :button, :button_html => { class: "btn btn-primary btn-sm m-t-10 waves-effect" } %>
+        <%= render "devise/shared/links" %>
+      <% end %>
+    <% end %>
+	</div>
+</div>

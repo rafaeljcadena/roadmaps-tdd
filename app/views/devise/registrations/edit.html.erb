@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Editar usuário</h2>
+    <ul class="actions">
+      <li>
+          <a href="" title="<%= t('Refresh') %>">
+              <i class="zmdi zmdi-refresh-alt"></i>
+          </a>
+      </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+    <%= semantic_form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put }) do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :name %>
+        <%= f.input :email %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <%= f.input :password, hint: "deixe em branco caso não queira mudá-lá" %>
+        <%= f.input :password_confirmation %>
+        <%= f.input :current_password, hint: "precisamos da sua senha atual para confirmar suas alterações" %>
+      <% end %>
+
+      <%= f.actions do %>
+        <%= f.action :submit, label: "Atualizar", :as => :button, :button_html => { class: "btn btn-primary btn-sm m-t-10 waves-effect" } %>
+      <% end %>
+    <% end %>
+	</div>
+</div>

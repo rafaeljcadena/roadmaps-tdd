@@ -1,0 +1,10 @@
+<%= form_tag request.path, :method => 'get', :class => 'clearfix search-form' do %>
+  <div class="input-group fg-float">
+    <!-- <span class="input-group-addon"><i class="zmdi zmdi-sun"></i></span> -->
+    <div class="fg-line">
+      <%= text_field_tag :search, params[:search], :class => "form-control fg-input" %>
+      <label class="fg-label"><%= t("search_here") %></label>
+    </div>
+    <span class="input-group-addon" style="padding: 0px;"><button class="btn btn-link" style="border-style: none;"><span class="glyphicon glyphicon-search"></span></button></span>
+  </div>
+<% end %>

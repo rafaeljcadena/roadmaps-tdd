@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= t('activerecord.models.user.other') %></h2>
+
+    <ul class="actions">
+        <li>
+            <a href="" title="<%= t('Refresh') %>">
+                <i class="zmdi zmdi-refresh-alt"></i>
+            </a>
+        </li>
+        <li>
+            <%= link_to new_user_path, title: t('Add') do %>
+                <i class="zmdi zmdi-plus"></i>
+            <% end %>
+        </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+    <%= render 'layouts/search' %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.attributes.user.name') %></th>
+          <th><%= t('activerecord.attributes.user.email') %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= link_to user, title: t("Show"), class: "waves-effect" do %>
+                <span class="zmdi zmdi-search"></span>
+              <% end %>
+            </td>
+            <td>
+              <% if can? :edit, user %>
+                <%= link_to edit_user_path(user), title: t('Edit'), class: "waves-effect" do %>
+                  <span class="zmdi zmdi-edit"></span>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <% if can? :destroy, user %>
+                <%= link_to user, title: t('Destroy'), class: "waves-effect", method: :delete, data: { confirm: 'Tem certeza? Esta ação não pode ser desfeita, e ela fica registrada nos logs do sistema' } do %>
+                  <span class="zmdi zmdi-delete"></span>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @users, class: "apple_pagination", previous_label: "← Anterior", next_label: "Próxima →" %>
+  </div>
+  <br>
+</div>

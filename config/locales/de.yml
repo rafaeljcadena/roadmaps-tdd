@@ -1,0 +1,121 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+de:
+  en: Englisch
+  de: Deutsche
+  hello: "Hallo Welt"
+  will_paginate:
+    page_gap: "..."
+  Back: "Zurück"
+  Show: "Anzeigen"
+  New: "Neu"
+  Edit: "Bearbeiten"
+  roles:
+    names:
+      aviate_admin: "Aviate Admin"
+      aviate_user: "Aviate User"
+    hints:
+      aviate_admin: "Volle Berechtigungen, um Metadaten, Produktlizenzen und Benutzer zu verwalten"
+      aviate_user: "Volle Berechtigungen in seinem Unternehmen, um Benutzer anzulegen und Produktlizenzen zu kaufen oder zu upgraden"
+  Are you sure?: "Sind Sie sicher? Diese Aktion kann nicht rückgängig gemacht werden."
+  Destroy: "Löschen"
+  datagrid:
+    no_results: "Suche ergibt keine Treffer"
+    form:
+      search: "Suche"
+      reset: "Suchfelder leeren"
+    table:
+      order:
+        asc: "&#x25B2;"
+        desc: "&#x25BC"
+  unauthorized:
+    manage:
+      # all: "Não autorizado para %{action} %{subject}"
+      user: "Zugriff verweigert"
+  helpers:
+    submit:
+      taken_service:
+        new: "Erstelle %{model}"
+        create: "Erstelle %{model}"
+        update: "Änderungen speichern"
+  activerecord:
+    successful:
+      messages:
+        created: "%{model} wurde erfolgreich angelegt."
+        updated: "%{model} wurde erfolgreich aktualisiert."
+    models:
+      role:
+        one: "Benutzerrolle"
+        other: "Benutzerrollen"
+      user_role:
+        one: "Benutzerrolle"
+        other: "Benutzerrollen"
+      user:
+        one: "User"
+        other: "User"
+    attributes:
+      user:
+        users: "User"
+        id: "ID"
+        email: "Email"
+        encrypted_password: "Passwort"
+        last_sign_in_at: "Letzte Anmeldung"
+        last_sign_in_ip: "IP der letzten Anmeldung"
+        current_sign_in_at: "Aktuelle Anmeldung"
+        current_sign_in_ip: "IP der aktuellen Anmeldung"
+        sign_in_count: "Anzahl Anmeldungen"
+        create_user: "Erstellt von"
+        created_at: "Erstellt am"
+    link:
+      details: "Details"
+      back_to_list: "Zurück zur Listenansicht"
+      edit: "Bearbeiten"
+      destroy: "Löschen"
+      previous: "← Vorherige"
+      next: "Nächste →"
+      add_new: "Neuen Datensatz hinzufügen"
+      remove: "Löschen"
+      are_you_sure_no_undone: "Sind Sie sicher? Diese Aktion kann nicht rückgängig gemacht werden"
+      add_new_user: "Neuen Benutzer hinzufügen"
+    form:
+      user:
+        fill_password_hint: "Tragen Sie nur dann ein Passwort ein, wenn Sie das bestehende ändern möchten."
+        password: "Passwort"
+        password_confirmation: "Passwort-Bestätigung"
+        products: "Produkte"
+        products_he_can_access: "Produkte, auf die der Benutzer zugreifen kann:"
+        employee_data: "Mitarbeiter-Daten:"
+        person_data: "Personendaten:"
+        address_data: "Adressdaten:"
+        legal_person_data: "Juristische Personen-Daten:"
+  key_tables: "Nachschlageschlüssel"
+  extras: "Extras"
+  my_apps: "Meine Apps"
+  license_management: "Lizenzverwaltung"
+  aviate_admins: "Aviate Administratoren"
+  logout: "Abmelden"
+  welcome:
+    title: "Willkommen"
+    text: "Willkommen bei my.Aviate, der Ort, um Ihre Aviate Apps zu verwalten!"
+  devise:
+    confirmations:
+      resend_instructions: "Anweisungen zur Bestätigung erneut senden"

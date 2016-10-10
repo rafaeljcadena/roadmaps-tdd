@@ -1,0 +1,9 @@
+test:
+  adapter: postgresql
+  host: localhost
+  database: apps-roadmaps
+
+development:
+  adapter: postgresql
+  host: localhost
+  database: apps-roadmaps

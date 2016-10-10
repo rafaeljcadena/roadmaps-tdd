@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= t('helpers.submit.general.show', model: t('activerecord.models.user.one')) %></h2>
+
+    <ul class="actions">
+      <li>
+        <%= link_to users_path, title: t('activerecord.link.back_to_list') do %>
+            <i class="zmdi zmdi-arrow-left"></i>
+        <% end %>
+      </li>
+      <li>
+          <a href="" title="<%= t('Refresh') %>">
+              <i class="zmdi zmdi-refresh-alt"></i>
+          </a>
+      </li>
+      <li>
+				<%= link_to edit_user_path(@user), title: t('Edit') do %>
+            <i class="zmdi zmdi-edit"></i>
+        <% end %>
+      </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+    <table class="table table-show">
+      <tr>
+        <th><%= t("activerecord.attributes.user.email") %>:</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th><%= t("activerecord.attributes.user.name") %>:</th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th><%= t("activerecord.attributes.user.is_active") %>:</th>
+        <td><%= @user.is_active ? "Sim" : "Não" %></td>
+      </tr>
+      <tr>
+        <th><%= t("activerecord.attributes.user.user_roles") %>:</th>
+        <td><%= (@user.roles.pluck(:name).map { |m| t(m) }).join(", ") %></td>
+      </tr>
+      <tr>
+        <th><%= t("activerecord.attributes.user.created_at") %>:</th>
+        <td><%= @user.created_at %></td>
+      </tr>
+      <tr>
+        <th><%= t("activerecord.attributes.user.updated_at") %>:</th>
+        <td><%= @user.updated_at %></td>
+      </tr>
+    </table>
+	</div>
+</div>

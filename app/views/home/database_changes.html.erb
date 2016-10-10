@@ -1,0 +1,51 @@
+<style rel="stylesheet" type="text/css">
+.popover{
+    max-width: 100%; // Max Width of the popover (depending on the container!)
+}
+</style>
+<h1>
+  Alterações na base de dados
+</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Data</th>
+			<th>Usuário</th>
+			<th>Registro</th>
+			<th>Ação</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @versions.each do |version| %>
+			<tr>
+				<td><%= version.created_at %></td>
+				<% user = User.with_deleted.find_by_id(version.whodunnit) %>
+				<td><%= user ? user.email : "Conta do Sistema"  %></td>
+				<td><%= t("activerecord.models.#{version.item_type.underscore}.one") %></td>
+				<td><%= t(version.event) %></td>
+				
+				<% 
+					hash = changeset_to_pretty_hash(version.changeset, version.item_type) 
+					dl_string = pretty_hash_to_dl(hash)
+					obj_hash = object_to_pretty_hash(version.reify) 
+					obj_dl_string = pretty_hash_to_dl(obj_hash)
+				%>
+
+				<td>
+					<%= link_to "Versão Anterior", "javascript:", class: "btn btn-link", role: "button", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "title" => "Objeto Anterior", "data-html" => "true", "data-content" => obj_dl_string.html_safe unless version.event == "create" %>
+				</td>
+				<td>
+					<%= link_to "Alterações", "javascript:", class: "btn btn-link", role: "button", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "title" => "Alterações", "data-html" => "true", "data-content" => dl_string.html_safe unless version.event == "destroy" %>
+				</td>
+			</tr>
+		<% end %>
+			<tr>
+				<td colspan="6">
+					
+					<%= will_paginate @versions, class: "apple_pagination", previous_label: "← Anterior", next_label: "Próxima →" %>
+				</td>
+			</tr>
+	</tbody>
+</table>

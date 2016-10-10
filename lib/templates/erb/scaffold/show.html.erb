@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%%= t('helpers.submit.general.show', model: t('activerecord.models.<%= singular_table_name %>.one')) %></h2>
+
+    <ul class="actions">
+      <li>
+        <%%= link_to <%= table_name %>_path, title: t('activerecord.link.back_to_list') do %>
+            <i class="zmdi zmdi-arrow-left"></i>
+        <%% end %>
+      </li>
+      <li>
+          <a href="" title="<%%= t('Refresh') %>">
+              <i class="zmdi zmdi-refresh-alt"></i>
+          </a>
+      </li>
+      <li>
+				<%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), title: t('Edit') do %>
+            <i class="zmdi zmdi-edit"></i>
+        <%% end %>
+      </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+    <table class="table table-show">
+      <%- attributes.each do |attribute| -%>
+        <tr>
+          <th><%%= t('activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>') %></th>
+          <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+        </tr>
+      <%- end -%>
+      <tr>
+        <th><%%= t('activerecord.attributes.<%= singular_table_name %>.created_at') %></th>
+        <td><%%= @<%= singular_table_name %>.created_at %></td>
+      </tr>
+      <tr>
+        <th><%%= t('activerecord.attributes.<%= singular_table_name %>.updated_at') %></th>
+        <td><%%= @<%= singular_table_name %>.updated_at %></td>
+      </tr>
+    </table>
+	</div>
+</div>
