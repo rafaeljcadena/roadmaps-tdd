@@ -23,7 +23,6 @@ class <%= class_name.pluralize %>Controller < ApplicationController
   # POST /<%= table_name %>
   # POST /<%= table_name %>.json
   def create
-    @<%= singular_table_name %> = <%= class_name %>.new(<%= singular_table_name %>_params)
     respond_to do |format|
       if @<%= singular_table_name %>.save
         format.html { redirect_to @<%= singular_table_name %>, notice: "#{t('activerecord.models.<%= singular_table_name %>.one')} criado com sucesso" }

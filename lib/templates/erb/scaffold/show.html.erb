@@ -16,7 +16,7 @@
       <li>
 				<%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), title: t('Edit') do %>
             <i class="zmdi zmdi-edit"></i>
-        <%% end %>
+        <%% end if can? :edit, @<%= singular_table_name %> %>
       </li>
     </ul>
 </div>
