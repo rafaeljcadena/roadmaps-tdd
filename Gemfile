@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.2.1"
+ruby "2.3.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '5.0.0'
 
 #Creates soft deletion, so we don't break any relations when deleting old records
 gem "paranoia", "~> 2.0"
@@ -11,10 +11,12 @@ gem "httparty"
 
 #File management
 gem 'paperclip'
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '>= 2.0.0'
 
 #PaperTrail to track any changes on tables
-gem 'paper_trail', '~> 3.0.1'
+gem 'paper_trail'
+
+gem 'puma', '~> 3.0'
 
 #User Roles
 gem "rolify"
@@ -49,7 +51,7 @@ gem 'devise'
 #Full text search
 gem 'pg_search'
 
-gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
+# gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'devise-i18n-views'
 
 #choosing where to display validation error message
@@ -65,17 +67,18 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'byebug'
+  # gem 'byebug'
+  gem 'byebug', platform: :mri
 end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 5.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -93,6 +96,13 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+	# Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+gem 'web-console'
+gem 'listen', '~> 3.0.5'
+	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
+gem 'spring-watcher-listen', '~> 2.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
