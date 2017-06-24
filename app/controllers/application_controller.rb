@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   respond_to :html, :json
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit( :name, :email, :password, :password_confirmation, :profile_picture) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :profile_picture) }
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit( :name, :email, :password, :password_confirmation, :profile_picture) }
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :profile_picture) }
   end
 
   def is_json
