@@ -54,7 +54,9 @@
 //= require template/mediaelement
 //= require template/mediaelementplayer
 // require template/require
-//= require template/summernote
+//= require summernote
+//= require summernote-pt-BR
+//= require summernote-image-title
 //= require template/sweet-alert
 //= require template/typeahead.jquery
 //= require template/waves
@@ -585,6 +587,98 @@ $(document).ready(function(){
     /*
      * HTML Editor
      */
+
+
+    $("textarea.summernote").summernote({
+      lang: "pt-BR",
+      height: 500,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+        // ['para', ['ul', 'ol']],
+        ['fontsize', ['fontsize']],
+        ['para', ['paragraph', 'height']],
+        ['insert', ['link', 'picture', 'video', 'hr']],
+        ['view', ['fullscreen', 'codeview']]
+
+      ],
+      popover: {
+          image: [
+              ['custom', ['captionIt']],
+              ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+              ['float', ['floatLeft', 'floatRight', 'floatNone']],
+              ['remove', ['removeMedia']]
+          ],
+      },
+      captionIt:{
+          icon:'<i class="note-icon-italic"/>', // Leave empty or don't set for default Icon.
+          figureClass:'summernote_img_caption',
+          figcaptionClass:'caption',
+      },
+      callbacks: {
+        onPaste: function (e) {
+          var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+          e.preventDefault();
+          document.execCommand('insertText', false, bufferText);
+        },
+        onImageUpload: function(files) {
+          note = this;
+          data = new FormData();
+          file = files[0];
+          if (file.type.match(/^image/)) {
+            data.append("photo[image]", files[0]);
+            $('.page-loader').fadeIn();
+            $.ajax({
+              url: "/pt-BR/photos.json",
+              data: data,
+              cache: false,
+              contentType: false,
+              processData: false,
+              type: 'POST',
+              success: function(data){
+                $(note).summernote("insertImage", data.url, 'filename');
+                $('.page-loader').fadeOut();
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus+" "+errorThrown);
+                $('.page-loader').fadeOut();
+              }
+            });
+          } else {
+            data.append("uploaded_file[file]", files[0]);
+            $('.page-loader').fadeIn();
+            $.ajax({
+              url: "/pt-BR/uploaded_files.json",
+              data: data,
+              cache: false,
+              contentType: false,
+              processData: false,
+              type: 'POST',
+              success: function(data){
+                a = document.createElement("a");
+                att = document.createAttribute("href");
+                att.value = data.url;
+                a.setAttributeNode(att);
+                att = document.createAttribute("target");
+                att.value = "_blank";
+                a.setAttributeNode(att);
+                a.innerHTML = data.name;
+                //$(note).summernote("createLink", { text: data.name, url: data.url, newWindow: true });
+                $(note).summernote('insertNode', a);
+
+                $('.page-loader').fadeOut();
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus+" "+errorThrown);
+                $('.page-loader').fadeOut();
+              }
+          });
+          }
+        }
+      }
+    });     
+
+     
     if ($('.html-editor')[0]) {
 	   $('.html-editor').summernote({
             height: 150

@@ -1,5 +1,4 @@
 Roadmaps::Application.routes.draw do
-  resources :testes
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     devise_for :users, :skip => [:registrations]
     as :user do

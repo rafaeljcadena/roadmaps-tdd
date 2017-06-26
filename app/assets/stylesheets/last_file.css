@@ -1,0 +1,368 @@
+li.radio.input {
+  overflow: inherit;
+}
+
+label.fg-label, li fieldset legend label, .checkbox legend label, .radio legend label {
+  font-weight: 800;
+  color: #222222;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+div.tooltip {
+  z-index: 99999;
+}
+
+.tooltip.in {
+  z-index: 1000000;
+}
+
+.note-editor .panel-heading {
+  border-bottom: 1px solid;
+}
+
+.note-editor .panel-heading:before, .note-editor .panel-heading:after {
+  content: "";
+}
+
+.fg-float .form-control {
+  color: #444;
+}
+
+.fg-float .fg-toggled .fg-label {
+  font-weight: 800;
+  color: #222222;
+  font-size: 13px;
+}
+
+.MsoNormal {
+  margin: inherit;
+}
+
+#menu-trigger:before {
+  top: -3px;
+}
+
+.dropzone {
+  border: 1px dotted gray;
+}
+
+.fileinput .dropzone {
+  height: 150px;
+  width: 200px;
+  margin: auto;
+}
+
+
+
+.dz-default.dz-message {
+  text-align: center;
+}
+
+.fileinput .dz-preview .dz-details, .fileinput .dz-preview .dz-success-mark {
+  display: none;
+}
+
+.dz-preview .dz-image, .dz-preview .dz-error-mark {
+  display: none;
+}
+
+.fileinput .dz-image {
+  display: block;
+}
+
+.fileinput .dz-started .dz-image {
+  display: none;
+}
+
+.dz-preview {
+  display: inline-block;
+  /*padding: px;*/
+  width: 100%;
+}
+
+.dz-progress .dz-upload {
+  display: inline-block;
+  height: 100%;
+  line-height: 5px;
+  background-color: #2196f3;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.dz-progress {
+  box-shadow: none;
+  border-radius: 0;
+  height: 5px;
+  line-height: 5px;
+  margin-bottom: 0;
+  background-color: #f5f5f5;
+}
+
+.fileinput .dz-progress {
+  margin-top: 70px;
+}
+
+.fileinput .dz-preview.dz-processing .dz-image {
+  display: none;
+}
+
+.fileinput .dz-preview.dz-processing .dz-progress {
+  display: block;
+}
+
+.fileinput .dz-preview.dz-processing.dz-complete.dz-success .dz-image {
+  display: block;
+}
+.fileinput .dz-preview.dz-processing.dz-complete.dz-success .dz-progress {
+  display: none;
+}
+
+.fileinput .dz-preview.dz-processing .dz-details, .dz-preview.dz-processing .dz-success-mark {
+  display: none;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+div.note-editor > div.note-toolbar button.btn {
+  height: 40px;
+  padding: 5px 10px;
+  line-height: 1.5em;
+}
+
+span.select2.select2-container span.select2-selection {
+  border: 0px none transparent;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+span.select2.select2-container {
+    bottom: 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 13px / 18.5714px GloberRegular;
+    list-style: none outside none;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.logo a:hover {
+  font-weight: bold;
+  /*text-decoration: underline;*/
+}
+
+.fg-toggled-manual:after {
+  width: 100% !important;
+}
+
+li.fg-line {
+  margin-top: 14px;
+}
+
+button.btn.dropdown-toggle.btn-default {
+  height: 25px;
+}
+
+ #header .logo > a {
+   font-size: 20px;
+ }
+
+ .logo {
+   margin-top: -4px;
+ }
+
+.formtastic p.inline-errors {
+  color: #f6675d;
+  margin-left: 0px;
+}
+
+.checkbox legend label, .radio legend label {
+  padding-left: 5px;
+}
+
+table.datagrid tr a {
+  color: #adadad;
+  font-size: 20px;
+}
+
+table.datagrid tr a:hover {
+  color: black;
+}
+
+form.formtastic .form-control.bootstrap-select {
+  height: 25px;
+}
+
+form.formtastic .buttons, form.formtastic .actions {
+  padding-left: 10px;
+}
+
+.formtastic fieldset.choices legend.label {
+  position: static;
+  width: auto;
+  float: none;
+  text-align: left;
+  height: 20px;
+  margin-bottom: 10px;
+  color: #5e5e5e;
+  font-size: 14px;
+}
+
+.formtastic fieldset.choices legend.label {
+  position: static;
+}
+
+.formtastic ol ol.choices-group {
+  padding-left: 0px;
+}
+
+div.fg-float > .fg-line {
+  margin-top: 25px;
+}
+
+table.table a span.zmdi {
+  font-size: 25px;
+  color: #5e5e5e;
+}
+
+table.table > tbody > tr > td, table.table tr > th {
+  vertical-align: middle;
+}
+
+.search-form {
+  /*margin-top: 20px;*/
+}
+
+.notice {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align: center;
+
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+       -moz-animation: fadein 2s; /* Firefox */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera */
+            animation: fadein 2s;
+}
+
+.font_light {
+  font-family: 'GloberLight';
+}
+.font_regular {
+  font-family: 'GloberRegular';
+}
+.font_bold {
+  font-family: 'GloberBold';
+}
+
+body {
+  /*font-family: 'GloberRegular';*/
+}
+
+table.table-show th {
+  text-align: right;
+  width: 20%;
+}
+
+table td {
+  vertical-align: middle;
+}
+
+.bar-button {
+  margin: 0px 10px;
+}
+
+.panel-title {
+  /*line-height: 35px;*/
+}
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+}
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em;
+}
+.apple_pagination .disabled {
+  color: #aaaaaa;
+}
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+.apple_pagination a {
+  text-decoration: none;
+  color: black;
+}
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline;
+}
+
+/* Scaffolds */
+
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+figure.summernote_img_caption {
+  margin: 0px 10px 10px 10px;
+}
+
+figure.summernote_img_caption .caption {
+  padding: 10px;
+  background-color: #F2DCD1;
+  font-weight: 100;
+  clear: both;
+}

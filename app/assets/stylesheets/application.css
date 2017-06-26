@@ -31,7 +31,7 @@
  *= require template/pushy
  *= require template/mediaelementplayer
  *= require template/mejs-skins
- *= require template/summernote
+ *= require summernote
  * require template/summernote-bs3
  *= require template/sweet-alert
  *= require template/waves
