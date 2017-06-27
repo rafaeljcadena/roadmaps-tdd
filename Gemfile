@@ -70,6 +70,8 @@ group :development, :test do
   gem 'sqlite3'
   # gem 'byebug'
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 # Use SCSS for stylesheets
