@@ -1,7 +1,15 @@
 <%%= semantic_form_for @<%= singular_name %> do |f| %>
   <%%= f.inputs do %>
   <%- attributes.each do |attribute| -%>
-    <%%= f.input :<%= attribute.name %> %>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <label class="fg-label"><%%= t("activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>") %></label><br/>&nbsp;
+        <%%= f.input :<%= attribute.name %> %>
+      </div>
+    </div>
+  <%- end -%>
+  
   <%- end -%>
   <%% end %>
 
