@@ -1,4 +1,4 @@
-class AddInitialUserAndRoles < ActiveRecord::Migration
+class AddInitialUserAndRoles < ActiveRecord::Migration[4.2]
   def up
   	Role.create name: :admin unless Role.find_by_name(:admin)
 

@@ -1,9 +1,9 @@
 test:
   adapter: postgresql
   host: localhost
-  database: apps-roadmaps
+  database: rails-template
 
 development:
   adapter: postgresql
   host: localhost
-  database: apps-roadmaps
+  database: rails-template

@@ -3,7 +3,7 @@ ruby "2.3.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '5.0.0'
-gem 'rails', '5.0.4'
+gem 'rails', '5.1.2'
 
 #Creates soft deletion, so we don't break any relations when deleting old records
 gem "paranoia", "~> 2.0"

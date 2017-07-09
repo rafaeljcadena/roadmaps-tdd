@@ -23,9 +23,6 @@ module Roadmaps
 
     # rails will fallback to en, no matter what is set as config.i18n.default_locale
     config.i18n.fallbacks = ["pt-BR"]
-
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
     config.i18n.available_locales = ["pt-BR"]
 
   end
