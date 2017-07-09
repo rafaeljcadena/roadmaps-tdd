@@ -1,4 +1,7 @@
 Roadmaps::Application.routes.draw do
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     devise_for :users, :skip => [:registrations]
     as :user do

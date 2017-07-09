@@ -17,7 +17,7 @@ gem 'aws-sdk', '>= 2.0.0'
 #PaperTrail to track any changes on tables
 gem 'paper_trail'
 
-gem 'puma', '~> 3.0'
+gem 'puma'
 
 #User Roles
 gem "rolify"

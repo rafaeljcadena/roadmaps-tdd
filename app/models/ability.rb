@@ -7,20 +7,9 @@ class Ability
         can :manage, :all
         cannot :destroy, User
       end
-      if (user.has_role? :manager)
+      # if (user.has_role? :another_role)
 
-      end
-      if (user.has_role? :editor)
-
-      end
-      if (user.has_role? :author)
-
-      end
-      if (user.has_role? :accountant)
-
-      end
-
-
+      # end
     end
   end
 end

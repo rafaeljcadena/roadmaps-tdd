@@ -15,6 +15,8 @@
 //= require autonumeric_ujs
 //= require jquery.inputmask
 //= require jquery_ujs
+//= require cable
+//= require turbolinks
 //= require pushy
 //= require jquery.inputmask.extensions
 //= require jquery.inputmask.date.extensions

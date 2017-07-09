@@ -1,4 +1,9 @@
 module ApplicationHelper
+	def gravatar_for(user, opts = {})
+    opts[:alt] = user.name
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email.downcase)}?s=#{opts.delete(:size) { 100 }}", opts
+  end
+
 	def clean_hash(set)
 		return unless set
 		set.delete "created_at"

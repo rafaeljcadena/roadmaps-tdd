@@ -1,3 +1,19 @@
+<style rel="stylesheet" type="text/css">
+.profile-pic > img {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.14);
+    box-sizing: content-box;
+}
+
+.profile-pic {
+  display:  block;
+  margin:  auto;
+  width:  50px;
+}
+
+</style>
 <!-- <ul>
   <li><%= link_to t('home'), home_index_path %></li>
   <% if can? :manage, User %>
@@ -26,6 +42,9 @@
         <i class="zmdi zmdi-time-restore"></i>Sair
       <% end %>
     </li>
+    <div class="profile-pic">
+      <%= gravatar_for(current_user, class: "mCS_img_loaded") %>
+    </div>
   <% end %>
   <!-- <li class="sub-menu">
     <a href=""><i class="zmdi zmdi-view-compact"></i> Headers</a>

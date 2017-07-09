@@ -3,9 +3,7 @@ class HomeController < ApplicationController
   end
 
   def contact
-  end
-
-  def about
+    ActionCable.server.broadcast "test_1_channel", 'teste'
   end
 
   def database_changes
