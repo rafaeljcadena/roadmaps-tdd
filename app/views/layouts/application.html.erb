@@ -38,10 +38,9 @@
                 <label for="tw-switch" class="ts-helper"></label>
               </div>
             </li>
-
-            <!-- <li id="top-search">
-              <a href=""><i class="tm-icon zmdi zmdi-search"></i></a>
-            </li> -->
+            <% if current_user %>
+              <%= render partial: "layouts/notifications" %>
+            <% end %>
           </ul>
         </li>
       </ul>
@@ -101,7 +100,7 @@
     </footer>
 
       <!-- Page Loader -->
-    <div class="page-loader">
+    <div class="page-loader" style="display: none;">
       <div class="preloader pls-blue">
         <svg class="pl-circular" viewBox="25 25 50 50">
           <circle class="plc-path" cx="50" cy="50" r="20" />

@@ -1,0 +1,13 @@
+<%= link_to (notification.link_url.present? ? notification.link_url : '#'), class: "lv-item #{!notification.viewed ? "unviewed" : ""}", "data-id" => notification.id, title: notification.text do %>
+  <div class="media">
+    <% if notification.image_url.present? %>
+      <div class="pull-left">
+        <%= image_tag notification.image_url, class: "lv-img-sm" %>
+      </div>
+    <% end %>
+    <div class="media-body">
+      <div class="lv-title"><%= notification.text %></div>
+      <small class="lv-small"><%= notification.created_at %></small>
+    </div>
+  </div>
+<% end %>

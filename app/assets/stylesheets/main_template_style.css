@@ -8405,7 +8405,7 @@ h6 small,
   position: absolute;
   width: 100%;
   height: calc(100% - 70px);
-  background: url(../img/notifications.png) no-repeat center;
+  background: url() no-repeat center;
   -webkit-transition: all;
   -o-transition: all;
   transition: all;
@@ -9156,7 +9156,6 @@ body:not(.sw-toggled) #sidebar {
   border-bottom: 1px solid #F0F0F0;
   font-weight: 500;
   color: #4C4C4C;
-  margin-bottom: 10px;
 }
 .lv-header .actions {
   position: absolute;
@@ -9242,7 +9241,6 @@ body:not(.sw-toggled) #sidebar {
   border-top: 1px solid #F0F0F0;
   line-height: 100%;
   font-size: 11px;
-  margin-top: 20px;
   color: #828282;
 }
 a.lv-footer:hover {

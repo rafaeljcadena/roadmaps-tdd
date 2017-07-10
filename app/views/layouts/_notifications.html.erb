@@ -1,0 +1,82 @@
+<style rel="stylesheet" type="text/css">
+#notifications {
+  height: 400px;
+  overflow-y: scroll;
+}
+#notifications .unviewed {
+  background-color: #fff3b3;
+}
+#notifications .lv-item {
+  border-bottom: 1px solid #F0F0F0;
+}
+</style>
+<li class="dropdown">
+  <a data-toggle="dropdown" href="" aria-expanded="false">
+    <i class="tm-icon zmdi zmdi-notifications"></i>
+    <% if current_user.unviewed_notifications.count > 0 %>
+      <i class="tmn-counts" id="notification_counter"><%= current_user.unviewed_notifications.count %></i>
+    <% end %>
+  </a>
+  <div class="dropdown-menu dropdown-menu-lg pull-right">
+    <div class="listview" id="notifications">
+      <div class="lv-header">
+        Notificações
+        <ul class="actions">
+          <li class="dropdown">
+            <a href="javascript:void(0);" id="mark_all_viewed" title="Ler todas">
+              <i class="zmdi zmdi-check-all"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lv-body">
+        <% @notifications = current_user.notifications.order(id: :desc).limit(10) %>
+        <%= render partial: "layouts/notification", collection: @notifications %>
+      </div>
+      <a class="lv-footer" href="javascript:void(0);" id="more-notifications">Ver mais</a>
+    </div>
+  </div>
+</li>
+<script language="javascript">
+<% last_notification = current_user.notifications.order(id: :desc).last %>
+var first_notification_id = <%= last_notification ? last_notification.id : 0 %>;
+
+$(function () {
+  $("#more-notifications").click(function () {
+    var id = $("#notifications .lv-body a:last-child").data("id");
+    $.ajax({
+      url: "<%= notifications_path %>",
+      data: { notification_id: id }
+    }).done(function(html) {
+      $("#notifications .lv-body").append(html);
+      should_hide_more_button();
+    });
+  });
+  $("#mark_all_viewed").click(function () {
+    $("#notifications .lv-item").removeClass("unviewed");
+    $("#notification_counter").html("");
+    $("#notification_counter").hide();
+    $.post({
+      url: "<%= mark_all_read_notifications_path %>"
+    });
+  });
+
+  $("#notifications .lv-item").click(function () {
+    $.post({
+      url: "/notifications/" + $(this).data("id") + "/mark_read"
+    });
+    var link = $(this).attr("href");
+    setTimeout(function() {
+        window.location.href = link;
+    }, 100);
+  });
+});
+
+function should_hide_more_button() {
+  if ($("#notifications .lv-body a:last-child").data("id") === first_notification_id) {
+    $("#more-notifications").hide();
+  }
+}
+
+should_hide_more_button();
+</script>

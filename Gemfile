@@ -18,6 +18,8 @@ gem 'aws-sdk', '>= 2.0.0'
 gem 'paper_trail'
 
 gem 'puma'
+gem 'annotate'
+gem 'redis'
 
 #User Roles
 gem "rolify"

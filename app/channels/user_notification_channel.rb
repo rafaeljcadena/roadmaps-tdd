@@ -1,6 +1,6 @@
-class TestChannel < ApplicationCable::Channel
+class UserNotificationChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "test_#{params['param']}_channel"
+    stream_from "user_#{current_user.id}_channel"
   end
 
   def unsubscribed
