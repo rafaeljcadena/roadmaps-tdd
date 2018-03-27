@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :unless => :is_json
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  require 'ability_factory'
 
   respond_to :html, :json
 
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
-      format.html { redirect_to root_url, :alert => exception.message }
+      format.html { redirect_to root_url, :alert => exception.message, status: 403 }
       format.json { render json: {error: :access_denied}, status: 403 }
     end
   end
@@ -31,4 +32,8 @@ class ApplicationController < ActionController::Base
   def default_url_options(options={})
     { :locale => (current_user && current_user.locale ? current_user.locale : false) || params[:locale] || I18n.default_locale }
   end
+
+  # def current_ability
+  #   @current_ability ||= Ability::Factory.build(current_user)
+  # end
 end

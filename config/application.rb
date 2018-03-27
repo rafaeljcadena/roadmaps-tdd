@@ -25,5 +25,17 @@ module Roadmaps
     config.i18n.fallbacks = ["pt-BR"]
     config.i18n.available_locales = ["pt-BR"]
 
+
+    # Disable default test files
+    config.generators.system_tests = nil
+    
+    # Generate Rspec test files
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false
+    end
   end
 end

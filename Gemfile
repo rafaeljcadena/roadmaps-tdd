@@ -69,11 +69,18 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  # gem 'sqlite3'
   # gem 'byebug'
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'spring-commands-rspec'
+  gem 'capybara'
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'faker'
+  gem 'cpf_faker'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Use SCSS for stylesheets
@@ -107,7 +114,7 @@ group :doc do
 end
 
 	# Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-gem 'web-console'
+gem 'web-console', group: :development
 gem 'listen', '~> 3.0.5'
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring'

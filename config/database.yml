@@ -1,7 +1,7 @@
 test:
   adapter: postgresql
   host: localhost
-  database: rails-template
+  database: rails-template-test
 
 development:
   adapter: postgresql
