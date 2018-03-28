@@ -325,6 +325,7 @@ DEPENDENCIES
   faker
   formtastic
   httparty
+  i18n
   jbuilder (>= 2.6.0)
   jquery-rails
   listen (~> 3.0.5)

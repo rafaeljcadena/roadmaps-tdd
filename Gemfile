@@ -54,8 +54,11 @@ gem 'devise'
 #Full text search
 gem 'pg_search'
 
+gem 'i18n'
+
 # gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'devise-i18n-views'
+
 
 #choosing where to display validation error message
 gem 'dynamic_form'

@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :unless => :is_json
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  require 'ability_factory'
 
   respond_to :html, :json
 
