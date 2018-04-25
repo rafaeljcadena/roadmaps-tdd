@@ -105,8 +105,6 @@ GEM
       actionpack (>= 3.2.13)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    httparty (0.15.5)
-      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -133,10 +131,10 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.12.1)
-    multi_xml (0.6.0)
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    oj (3.5.1)
     orm_adapter (0.5.0)
     paper_trail (7.0.3)
       activerecord (>= 4.0, < 5.2)
@@ -304,11 +302,11 @@ DEPENDENCIES
   factory_bot_rails (~> 4.0)
   faker
   formtastic
-  httparty
   i18n
   jbuilder (>= 2.6.0)
   jquery-rails
   listen (~> 3.0.5)
+  oj
   paper_trail
   paperclip
   pg

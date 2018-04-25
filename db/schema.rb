@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709142653) do
+ActiveRecord::Schema.define(version: 20180425200525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
   enable_extension "fuzzystrmatch"
   enable_extension "unaccent"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "commenteable_id"
+    t.string "commenteable_type"
+    t.bigint "user_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "notifications", force: :cascade do |t|
     t.bigint "user_id"
@@ -83,5 +93,6 @@ ActiveRecord::Schema.define(version: 20170709142653) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "comments", "users"
   add_foreign_key "notifications", "users"
 end

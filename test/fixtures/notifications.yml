@@ -7,7 +7,7 @@
 #  text       :string
 #  image_url  :string
 #  link_url   :string
-#  viewed     :boolean
+#  viewed     :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

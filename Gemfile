@@ -5,7 +5,7 @@ ruby "2.3.3"
 # gem 'rails', '5.0.0'
 gem 'rails', '5.1.6'
 
-gem "httparty"
+# gem "httparty"
 
 #File management
 gem 'paperclip'
@@ -20,6 +20,9 @@ gem 'annotate'
 
 #User Roles
 gem "rolify"
+
+# Fast json generatin
+gem 'oj'
 
 #Excel handling (import only)
 # gem 'roo', '1.13.2'

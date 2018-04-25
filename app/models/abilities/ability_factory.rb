@@ -1,5 +1,4 @@
-require 'ability_admin'
-require 'ability_test'
+# require 'admin'
 
 class Ability::Factory
   def self.build(user)

@@ -29,6 +29,13 @@ Roadmaps::Application.routes.draw do
   # mount ActionCable.server => '/cable'
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    concern :commenteable do
+      resources :comments, only: [:index, :create, :destroy]
+    end
+
+    # Exemplo de como habilitar rotas de comentários em um resource
+    # resources :nome, concerns: :commenteable
+
     devise_for :users, :skip => [:registrations]
     as :user do
       get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
@@ -40,7 +47,7 @@ Roadmaps::Application.routes.draw do
     get "home/about"
     get "home/database_changes"
 
-    resources :users, path: '/admin/users'
+    resources :users, path: '/admin/users', concerns: :commenteable
     resources :notifications, only: [:index] do
       member do
         post 'mark_read'
