@@ -3,10 +3,7 @@ ruby "2.3.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '5.0.0'
-gem 'rails', '5.1.2'
-
-#Creates soft deletion, so we don't break any relations when deleting old records
-gem "paranoia", "~> 2.0"
+gem 'rails', '5.1.6'
 
 gem "httparty"
 
@@ -19,17 +16,17 @@ gem 'paper_trail'
 
 gem 'puma'
 gem 'annotate'
-gem 'redis'
+# gem 'redis'
 
 #User Roles
 gem "rolify"
 
 #Excel handling (import only)
-gem 'roo', '1.13.2'
+# gem 'roo', '1.13.2'
 
 #Excel handling (export only)
-gem 'axlsx_rails', '~> 0.3.0'
-gem 'rubyzip', '~> 1.0.0'
+# gem 'axlsx_rails', '~> 0.3.0'
+# gem 'rubyzip', '~> 1.0.0'
 
 #PDF Generation
 # gem 'wicked_pdf'
@@ -37,9 +34,6 @@ gem 'rubyzip', '~> 1.0.0'
 
 #Pagination
 gem "will_paginate"
-
-#HTML Mask for numbers
-gem 'autonumeric-rails'
 
 #Authorization Control
 gem "cancancan"
