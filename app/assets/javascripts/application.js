@@ -16,7 +16,6 @@
 //= require jquery.inputmask
 //= require jquery_ujs
 // require cable
-//= require turbolinks
 //= require pushy
 //= require jquery.inputmask.extensions
 //= require jquery.inputmask.date.extensions
@@ -62,6 +61,7 @@
 //= require template/sweet-alert
 //= require template/typeahead.jquery
 //= require template/waves
+// require turbolinks
 
 $(document).ready(function(){
     $.extend($.inputmask.defaults.definitions, {
