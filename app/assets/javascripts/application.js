@@ -61,7 +61,6 @@
 //= require template/sweet-alert
 //= require template/typeahead.jquery
 //= require template/waves
-// require turbolinks
 
 $(document).ready(function(){
     $.extend($.inputmask.defaults.definitions, {
