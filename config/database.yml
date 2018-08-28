@@ -1,9 +1,11 @@
 test:
   adapter: postgresql
   host: localhost
-  database: rails-template-test
+  username: ubuntu
+  database: roadmaps-tdd-test
 
 development:
   adapter: postgresql
   host: localhost
-  database: rails-template
+  username: ubuntu
+  database: roadmaps-tdd
