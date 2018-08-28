@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= t('activerecord.models.category.other') %></h2>
+
+    <ul class="actions">
+        <li>
+            <a href="" title="<%= t('Refresh') %>">
+                <i class="zmdi zmdi-refresh-alt"></i>
+            </a>
+        </li>
+        <li>
+            <%= link_to new_category_path, title: t('activerecord.link.add_new') do %>
+                <i class="zmdi zmdi-plus"></i>
+            <% end if can? :new, Category %>
+        </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+    <%= render 'layouts/search' %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+              <th><%= t('activerecord.attributes.category.name') %></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+                <td><%= category.name %></td>
+              <td>
+                <%= link_to category, title: t('activerecord.link.details'), class: "waves-effect" do %>
+                  <span class="zmdi zmdi-search"></span>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_category_path(category), title: t('activerecord.link.edit'), class: "waves-effect" do %>
+                  <span class="zmdi zmdi-edit"></span>
+                <% end if can? :edit, category %>
+              </td>
+              <td>
+                <%= link_to category, title: t('activerecord.link.destroy'), class: "waves-effect", method: :delete, data: { confirm: 'Tem certeza? Esta ação não pode ser desfeita, e ela fica registrada nos logs do sistema' } do %>
+                  <span class="zmdi zmdi-delete"></span>
+                <% end if can? :destroy, category %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%= will_paginate @categories, class: "apple_pagination", previous_label: t('activerecord.link.previous'), next_label: t('activerecord.link.next') %>
+  </div>
+  <br>
+</div>

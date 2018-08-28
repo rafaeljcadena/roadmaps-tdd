@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= t('helpers.submit.general.show', model: t('activerecord.models.product.one')) %></h2>
+
+    <ul class="actions">
+      <li>
+        <%= link_to products_path, title: t('activerecord.link.back_to_list') do %>
+            <i class="zmdi zmdi-arrow-left"></i>
+        <% end %>
+      </li>
+      <li>
+          <a href="" title="<%= t('Refresh') %>">
+              <i class="zmdi zmdi-refresh-alt"></i>
+          </a>
+      </li>
+      <li>
+				<%= link_to edit_product_path(@product), title: t('Edit') do %>
+            <i class="zmdi zmdi-edit"></i>
+        <% end if can? :edit, @product %>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body card-padding">
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="fg-label"><%= t('activerecord.attributes.product.name') %></label><br/>&nbsp;
+          <%= @product.name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="fg-label"><%= t('activerecord.attributes.product.price') %></label><br/>&nbsp;
+          <%= @product.price %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="fg-label"><%= t('activerecord.attributes.product.status') %></label><br/>&nbsp;
+          <%= @product.status %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="fg-label"><%= t('activerecord.attributes.product.category') %></label><br/>&nbsp;
+          <%= @product.category %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="fg-label"><%= t('activerecord.attributes.product.created_at') %></label><br/>&nbsp;
+          <%= @product.created_at %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="fg-label"><%= t('activerecord.attributes.product.updated_at') %></label><br/>&nbsp;
+          <%= @product.updated_at %>
+        </div>
+      </div>
+  </div>
+</div>
