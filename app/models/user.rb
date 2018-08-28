@@ -39,15 +39,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :name, presence: true, length: { in: 1..80 }
   # validates :locale, inclusion: { in: I18n.available_locales }
-  has_many :notifications, dependent: :destroy
-
-  def mark_notifications_viewed
-    self.notifications.where(viewed: false).update_all viewed: true
-  end
-
-  def unviewed_notifications
-    self.notifications.where(viewed: false)
-  end
 
   def to_s
   	name
@@ -57,20 +48,4 @@ class User < ActiveRecord::Base
     super and self.is_active?
   end
 
-  def self.search(search, page)
-    if search && search != ""
-      paginate(:per_page => 20, :page => page).full_search(search)
-    else
-      paginate(:per_page => 20, :page => page)
-    end
-  end
-
-  pg_search_scope :full_search,
-    :against => [:email, :name],
-    :using => {
-      :tsearch => {:prefix => true},
-      :dmetaphone => {},
-      :trigram => {}
-    },
-    :ignoring => :accents
 end

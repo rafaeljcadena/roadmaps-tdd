@@ -23,7 +23,7 @@ module Roadmaps
 
     # rails will fallback to en, no matter what is set as config.i18n.default_locale
     config.i18n.fallbacks = ["pt-BR"]
-    config.i18n.available_locales = ["pt-BR"]
+    config.i18n.available_locales = ["pt-BR", "en"]
 
 
     # Disable default test files
