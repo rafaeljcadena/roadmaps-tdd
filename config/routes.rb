@@ -25,6 +25,8 @@
 # 
 
 Roadmaps::Application.routes.draw do
+  resources :products
+  resources :categories
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
 

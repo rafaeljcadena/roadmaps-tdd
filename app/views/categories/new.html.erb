@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= t('helpers.submit.general.new', model: t('activerecord.models.category.one')) %></h2>
+
+    <ul class="actions">
+      <li>
+        <%= link_to categories_path, title: t('activerecord.link.back_to_list') do %>
+            <i class="zmdi zmdi-arrow-left"></i>
+        <% end %>
+      </li>
+      <li>
+          <a href="" title="<%= t('Refresh') %>">
+              <i class="zmdi zmdi-refresh-alt"></i>
+          </a>
+      </li>
+    </ul>
+</div>
+  <div class="card-body card-padding">
+		<%= render 'form' %>
+	</div>
+</div>

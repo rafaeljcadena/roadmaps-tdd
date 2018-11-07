@@ -34,9 +34,9 @@ FactoryBot.define do
 		email { Faker::Internet.email  }
 		password 'lklklklk'
 		password_confirmation { password }
-
+		
 		trait :operator do
-			after(:create) {|user| user.add_role :operator }
+			after(:create) { |user| user.add_role :operator }
 		end
 
 		trait :manager do
